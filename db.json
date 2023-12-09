@@ -1,0 +1,61 @@
+{
+    "keys": {
+        "rows": [
+            {
+                "key": "<OPENAI_API_KEY>",
+                "queries": 0,
+                "balance": 0,
+                "tokens": 0
+            },
+            {
+                "key": "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",
+                "queries": 0,
+                "balance": 0,
+                "tokens": 0
+            },
+            {
+                "key": "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",
+                "queries": 0,
+                "balance": 0,
+                "tokens": 0
+            }
+        ],
+        "name": "keys"
+    },
+    "conversations": {
+        "rows": [
+            {
+                "id": "default",
+                "userName": "User",
+                "messages": [
+                    {
+                        "id": "ec784a80-d93b-4e99-a662-7dce192b2511",
+                        "content": "Hello?",
+                        "type": 1,
+                        "date": 1702134624580
+                    },
+                    {
+                        "id": "8a401cf5-7533-4a5a-9fb2-11e9921e28c8",
+                        "content": "Hello?",
+                        "type": 1,
+                        "date": 1702134986161
+                    },
+                    {
+                        "id": "19f5f96e-e809-498e-a46f-b2ccb9cf2cf7",
+                        "content": "Hello?",
+                        "type": 1,
+                        "date": 1702135086504
+                    },
+                    {
+                        "id": "6d95f87f-b2c2-4816-82b1-a7f863660fea",
+                        "content": "Hello?",
+                        "type": 1,
+                        "date": 1702135092242
+                    }
+                ],
+                "lastActive": 1702135092263
+            }
+        ],
+        "name": "conversations"
+    }
+}

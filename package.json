@@ -10,7 +10,10 @@
         "format": "prettier --write ."
     },
     "dependencies": {
+        "chatgpt-official": "^1.1.9",
+        "framer-motion": "^10.16.16",
         "next": "14.0.4",
+        "openai": "^4.20.1",
         "prettier": "^3.1.0",
         "react": "^18",
         "react-dom": "^18"
