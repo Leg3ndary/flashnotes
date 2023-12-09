@@ -2,13 +2,14 @@ import type { NextPage } from "next";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+
+// The upload component for our webpage
 const Upload: NextPage = ({ flashCards, setFlashCards }) => {
+    // Processing the image into a base64 string
     const [base64, setBase64] = useState<string | null>(null);
     const [processing, setProcessing] = useState(false);
 
     const onFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        // e.preventDefault();
-
         if (!e.target.files) {
             console.log("no file sreturn");
             return;
@@ -90,6 +91,8 @@ const Upload: NextPage = ({ flashCards, setFlashCards }) => {
     );
 };
 
+
+// Helper function to convert a file to a base64 string
 const toBase64 = (file: File) => {
     return new Promise((resolve, reject) => {
         const fileReader = new FileReader();

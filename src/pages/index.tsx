@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Card from "@/pages/components/Card";
 import Upload from "@/pages/components/Upload";
 
+// Setting up the font and some animations
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
 const containerOpen = {
@@ -18,27 +19,13 @@ const containerOpen = {
     },
 };
 
+// The general datatype for a flashcard
 type flashCardType = {
     question: string;
     answer: string;
 };
 
-const exampleData: flashCardType[] = [
-    // write some sample questions and answers
-    {
-        question: "How does this project work?",
-        answer: "Click on the above button to generate flash cards!",
-    },
-    {
-        question: "What is this project built with?",
-        answer: "Next.js, TailwindCSS, Framer Motion, and TypeScript.",
-    },
-    {
-        question: "Why shouldn't I use FlashNotes?",
-        answer: "No reasons at all",
-    },
-];
-
+// Quick helper function to check if a url is valid
 const isValidUrl = (urlString: string) => {
     try {
         return Boolean(new URL(urlString));
@@ -47,7 +34,9 @@ const isValidUrl = (urlString: string) => {
     }
 };
 
+// The homepage of our website
 export default function Home() {
+    // Generates the flashcards by using our own API
     async function generateFlashCards(event: any) {
         if (currentUrl === "" || !isValidUrl(currentUrl)) {
             return;
@@ -67,6 +56,7 @@ export default function Home() {
         setProcessing(false);
     }
 
+    // Set some variables that will update state
     const [processing, setProcessing] = useState(false);
     const [currentUrl, setCurrentUrl] = useState("");
     const [flashCards, setFlashCards] = useState<flashCardType[]>([]);
@@ -77,6 +67,7 @@ export default function Home() {
         >
             <div className="fixed h-16 w-full bg-gradient-to-r from-blue-500 to-fuchsia-500 flex items-center p-6 z-40">
                 <h1 className="text-2xl font-black text-white">FlashNotes</h1>
+                {/* Possible Create Account Button */}
                 {/* <motion.button
                     className="hover:bg-blue-500 bg-transparent border-white hover:border-blue-500 border-2 text-white transition-colors font-bold rounded-lg px-2 py-0.5 h-4 ml-auto"
                     whileHover={{ scale: 1.1 }}
@@ -104,7 +95,7 @@ export default function Home() {
                         setCurrentUrl(e.currentTarget.value);
                     }}
                 />
-                
+
                 <div className="m-4 flex justify-center items-center gap-6 flex-col lg:flex-row">
                     <motion.button
                         className="hover:bg-green-500 bg-transparent border-green-500 hover:border-green-500 border-2 text-green-500 hover:text-white transition-colors font-bold rounded-lg px-4 py-1 mx-auto text-3xl flex flex-row items-center justify-center"

@@ -9,7 +9,15 @@ const itemOpen = {
     },
 };
 
-export default function Card({num, question, answer}: {num: string, question: string, answer: string}) {
+export default function Card({
+    num,
+    question,
+    answer,
+}: {
+    num: string;
+    question: string;
+    answer: string;
+}) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -21,7 +29,9 @@ export default function Card({num, question, answer}: {num: string, question: st
             onClick={() => setIsOpen(!isOpen)}
         >
             <div className="flex items-center justify-between">
-                <h1 className="text-3xl font-bold">{isOpen ? "Answer" : "Question"}</h1>
+                <h1 className="text-3xl font-bold">
+                    {isOpen ? "Answer" : "Question"}
+                </h1>
                 {/* <motion.button
                     className="hover:bg-blue-500 bg-transparent border-blue-500 hover:border-blue-500 border-2 text-blue-500 hover:text-white transition-colors font-bold rounded-lg px-2 py-0.5 ml-auto"
                     whileHover={{ scale: 1.1 }}
