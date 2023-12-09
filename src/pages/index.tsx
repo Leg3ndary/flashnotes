@@ -69,7 +69,7 @@ export default function Home() {
 
     const [processing, setProcessing] = useState(false);
     const [currentUrl, setCurrentUrl] = useState("");
-    const [flashCards, setFlashCards] = useState<flashCardType[]>(exampleData);
+    const [flashCards, setFlashCards] = useState<flashCardType[]>([]);
 
     return (
         <main
@@ -104,7 +104,7 @@ export default function Home() {
                         setCurrentUrl(e.currentTarget.value);
                     }}
                 />
-                <Upload flashCards={flashCards} setFlashCards={setFlashCards} />
+                
                 <div className="m-4 flex justify-center items-center gap-6 flex-col lg:flex-row">
                     <motion.button
                         className="hover:bg-green-500 bg-transparent border-green-500 hover:border-green-500 border-2 text-green-500 hover:text-white transition-colors font-bold rounded-lg px-4 py-1 mx-auto text-3xl flex flex-row items-center justify-center"
@@ -144,6 +144,7 @@ export default function Home() {
                         Clear
                     </motion.button>
                 </div>
+                <Upload flashCards={flashCards} setFlashCards={setFlashCards} />
             </div>
             <hr className="border-gray-300 w-11/12 mx-auto rounded-2xl border-2" />
             {/* Cards Section */}
